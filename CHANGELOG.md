@@ -1,6 +1,9 @@
 # Change Log
 
+## [0.1.0](https://github.com/ItinerisLtd/gfe-preset/tree/0.1.0) (2019-02-13)
+**Merged pull requests:**
 
+- Fix circleci [\#1](https://github.com/ItinerisLtd/gfe-preset/pull/1) ([TangRufus](https://github.com/TangRufus))
 
 
 

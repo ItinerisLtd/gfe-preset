@@ -51,14 +51,15 @@
     },
     "prefer-stable": true,
     "scripts": {
-        "style:check": "phpcs",
-        "style:fix": "phpcbf",
         "pretag": [
             "composer update",
             "@style:check",
             "composer normalize",
+            "npx doctoc README.md",
             "github_changelog_generator --no-verbose"
-        ]
+        ],
+        "style:check": "phpcs",
+        "style:fix": "phpcbf"
     },
     "support": {
         "email": "hello@itineris.co.uk",
