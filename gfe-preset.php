@@ -39,9 +39,6 @@ add_filter('default_option_gfe_pluginowl_licensed', function ($key) {
         : $key;
 });
 
-/**
- * 'GFE_PRESET_WEBSITE_KEY' must be secure and unique to your WordPress installation (environment) only, i.e: staging and production sites should have different 'GFE_PRESET_WEBSITE_KEY'
- */
 add_filter('pre_option_gfe_website_key', function ($key): string {
     if (! defined('GFE_PRESET_WEBSITE_KEY')) {
         // Die to prevent encrypting data with unknown (not backed up) website key.
@@ -51,9 +48,6 @@ add_filter('pre_option_gfe_website_key', function ($key): string {
     return md5(constant('GFE_PRESET_WEBSITE_KEY'));
 });
 
-/**
- * 'GFE_PRESET_ENCRYPTION_KEY' must be secure and unique to your WordPress installation (environment) only, i.e: staging and production sites should have different 'GFE_PRESET_WEBSITE_KEY'
- */
 add_filter('pre_option_gfe_encryption_key', function ($key): string {
     if (! defined('GFE_PRESET_ENCRYPTION_KEY')) {
         // Die to prevent encrypting data with unknown (not backed up) encryption key.
