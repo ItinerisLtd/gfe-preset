@@ -1,0 +1,68 @@
+{
+    "name": "itinerisltd/gfe-preset",
+    "type": "wordpress-muplugin",
+    "description": "Utilities for Gravity Forms Encrypted Fields.",
+    "keywords": [
+        "encryption",
+        "gravity-forms",
+        "gravityforms",
+        "security",
+        "wordpress",
+        "wp"
+    ],
+    "homepage": "https://itinerisltd.github.io/gfe-preset/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Itineris Limited",
+            "email": "hello@itineris.co.uk",
+            "homepage": "https://itineris.co.uk/",
+            "role": "Company"
+        },
+        {
+            "name": "Tang Rufus",
+            "email": "tangrufus@gmail.com",
+            "homepage": "https://typist.tech/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "itinerisltd/itineris-wp-coding-standards": "^0.2.0",
+        "roave/security-advisories": "dev-master"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Itineris\\GFEPreset\\": "src/"
+        }
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "style:check": "phpcs",
+        "style:fix": "phpcbf",
+        "pretag": [
+            "composer update",
+            "@style:check",
+            "composer normalize",
+            "github_changelog_generator --no-verbose"
+        ]
+    },
+    "support": {
+        "email": "hello@itineris.co.uk",
+        "issues": "https://github.com/ItinerisLtd/gfe-preset/issues",
+        "source": "https://github.com/ItinerisLtd/gfe-preset"
+    }
+}

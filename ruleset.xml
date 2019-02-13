@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<ruleset name="GFEPreset">
+    <!-- Check all files under project root -->
+    <file>./</file>
+
+    <!-- Show sniff codes in all reports -->
+    <arg value="s"/>
+
+    <!-- Install custom rulesets -->
+    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/automattic/vipwpcs,vendor/itinerisltd/itineris-wp-coding-standards"/>
+
+    <!-- Use Itineris WP Coding Standards -->
+    <rule ref="Itineris"/>
+
+    <exclude-pattern>/tests/*</exclude-pattern>
+    <exclude-pattern>/vendor/*</exclude-pattern>
+
+    <config name="minimum_supported_wp_version" value="5.0"/>
+
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array" value="gfe-preset"/>
+        </properties>
+    </rule>
+
+    <rule ref="Squiz.Commenting.FileComment.MissingPackageTag">
+        <exclude-pattern>/gfe-preset.php</exclude-pattern>
+    </rule>
+</ruleset>
