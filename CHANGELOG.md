@@ -1,8 +1,16 @@
 # Change Log
 
+## [0.1.1](https://github.com/ItinerisLtd/gfe-preset/tree/0.1.1) (2019-02-27)
+[Full Changelog](https://github.com/ItinerisLtd/gfe-preset/compare/0.1.0...0.1.1)
+
+**Merged pull requests:**
+
+- Validate constants is a non-empty string [\#3](https://github.com/ItinerisLtd/gfe-preset/pull/3) ([TangRufus](https://github.com/TangRufus))
+
 ## [0.1.0](https://github.com/ItinerisLtd/gfe-preset/tree/0.1.0) (2019-02-13)
 **Merged pull requests:**
 
+- Version bump 0.1.0 [\#2](https://github.com/ItinerisLtd/gfe-preset/pull/2) ([TangRufus](https://github.com/TangRufus))
 - Fix circleci [\#1](https://github.com/ItinerisLtd/gfe-preset/pull/1) ([TangRufus](https://github.com/TangRufus))
 
 
