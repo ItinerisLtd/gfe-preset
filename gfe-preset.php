@@ -20,17 +20,26 @@ if (! defined('WPINC')) {
     die;
 }
 
+function get_constant(string $key): string
+{
+    // phpcs:ignore WordPressVIPMinimum.Constants.ConstantString.NotCheckingConstantName
+    if (! defined($key)) {
+        wp_die(esc_html("Constant $key is undefined"));
+    } elseif (! is_string(constant($key))) {
+        wp_die(esc_html("Constant $key is not a string"));
+    } elseif ('' === constant($key)) {
+        wp_die(esc_html("Constant $key is not an empty string"));
+    }
+
+    return constant($key);
+}
+
 /**
  * Die to prevent encrypting data with unknown (not backed up) website key or encryption key
  */
 add_action('muplugins_loaded', function (): void {
-    if (! defined('GFE_PRESET_WEBSITE_KEY')) {
-        wp_die("Constant 'GFE_PRESET_WEBSITE_KEY' is undefined");
-    }
-
-    if (! defined('GFE_PRESET_ENCRYPTION_KEY')) {
-        wp_die("Constant 'GFE_PRESET_ENCRYPTION_KEY' is undefined");
-    }
+    get_constant('GFE_PRESET_WEBSITE_KEY');
+    get_constant('GFE_PRESET_ENCRYPTION_KEY');
 });
 
 add_filter('default_option_gfe_pluginowl_licensed', function ($key) {
@@ -39,20 +48,10 @@ add_filter('default_option_gfe_pluginowl_licensed', function ($key) {
         : $key;
 });
 
-add_filter('pre_option_gfe_website_key', function ($key): string {
-    if (! defined('GFE_PRESET_WEBSITE_KEY')) {
-        // Die to prevent encrypting data with unknown (not backed up) website key.
-        wp_die("Constant 'GFE_PRESET_WEBSITE_KEY' is not set");
-    }
-
-    return md5(constant('GFE_PRESET_WEBSITE_KEY'));
+add_filter('pre_option_gfe_website_key', function (): string {
+    return md5(get_constant('GFE_PRESET_WEBSITE_KEY'));
 });
 
-add_filter('pre_option_gfe_encryption_key', function ($key): string {
-    if (! defined('GFE_PRESET_ENCRYPTION_KEY')) {
-        // Die to prevent encrypting data with unknown (not backed up) encryption key.
-        wp_die("Constant 'GFE_PRESET_ENCRYPTION_KEY' is not set");
-    }
-
-    return md5(constant('GFE_PRESET_ENCRYPTION_KEY'));
+add_filter('pre_option_gfe_encryption_key', function (): string {
+    return md5(get_constant('GFE_PRESET_ENCRYPTION_KEY'));
 });
