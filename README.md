@@ -39,6 +39,8 @@ By default [Gravity Forms Encrypted Fields](https://codecanyon.net/item/gravity-
 
 [GFE Preset](https://github.com/ItinerisLtd/gfe-preset) overrides the **website key** via PHP constants so that the key always in a *known state*.
 
+Moreover, encrypting with *unknown* encryption means you can't decrypt if disasters happen. Better safe than worry. GFE Preset triggers [`wp_die`](https://codex.wordpress.org/Function_Reference/wp_die) if [required constants](https://github.com/ItinerisLtd/gfe-preset/tree/better-checks#usage) not defined.
+
 Besides, [GFE Preset](https://github.com/ItinerisLtd/gfe-preset) provides similar overrides to:
 
 - CodeCanyon license key
