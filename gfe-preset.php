@@ -3,7 +3,7 @@
  * Plugin Name:     GFE Preset
  * Plugin URI:      https://github.com/ItinerisLtd/gfe-preset
  * Description:     Utilities for Gravity Forms Encrypted Fields
- * Version:         0.1.1
+ * Version:         0.1.0
  * Author:          Itineris Limited
  * Author URI:      https://itineris.co.uk
  * License:         MIT
@@ -20,13 +20,15 @@ if (! defined('WPINC')) {
     die;
 }
 
-function getConstant(string $key): string {
+function get_constant(string $key): string
+{
+    // phpcs:ignore WordPressVIPMinimum.Constants.ConstantString.NotCheckingConstantName
     if (! defined($key)) {
-        wp_die("Constant $key is undefined");
+        wp_die(esc_html("Constant $key is undefined"));
     } elseif (! is_string(constant($key))) {
-        wp_die("Constant $key is not a string");
+        wp_die(esc_html("Constant $key is not a string"));
     } elseif ('' === constant($key)) {
-        wp_die("Constant $key is not an empty string");
+        wp_die(esc_html("Constant $key is not an empty string"));
     }
 
     return constant($key);
@@ -36,8 +38,8 @@ function getConstant(string $key): string {
  * Die to prevent encrypting data with unknown (not backed up) website key or encryption key
  */
 add_action('muplugins_loaded', function (): void {
-    getConstant('GFE_PRESET_WEBSITE_KEY');
-    getConstant('GFE_PRESET_ENCRYPTION_KEY');
+    get_constant('GFE_PRESET_WEBSITE_KEY');
+    get_constant('GFE_PRESET_ENCRYPTION_KEY');
 });
 
 add_filter('default_option_gfe_pluginowl_licensed', function ($key) {
@@ -47,9 +49,9 @@ add_filter('default_option_gfe_pluginowl_licensed', function ($key) {
 });
 
 add_filter('pre_option_gfe_website_key', function (): string {
-    return md5(getConstant('GFE_PRESET_WEBSITE_KEY'));
+    return md5(get_constant('GFE_PRESET_WEBSITE_KEY'));
 });
 
 add_filter('pre_option_gfe_encryption_key', function (): string {
-    return md5(getConstant('GFE_PRESET_ENCRYPTION_KEY'));
+    return md5(get_constant('GFE_PRESET_ENCRYPTION_KEY'));
 });

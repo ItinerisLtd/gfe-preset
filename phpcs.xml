@@ -29,4 +29,8 @@
     <rule ref="Squiz.Commenting.FileComment.MissingPackageTag">
         <exclude-pattern>/gfe-preset.php</exclude-pattern>
     </rule>
+
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+        <exclude-pattern>/gfe-preset.php</exclude-pattern>
+    </rule>
 </ruleset>
