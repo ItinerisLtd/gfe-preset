@@ -16,7 +16,7 @@
 - [Usage](#usage)
   - [Normal WordPress](#normal-wordpress)
   - [Bedrock](#bedrock)
-- [Wanrings](#wanrings)
+- [Warnings](#warnings)
 - [FAQ](#faq)
   - [Why `GFE_PRESET_WEBSITE_KEY` and `GFE_PRESET_ENCRYPTION_KEY` must be defined?](#why-gfe_preset_website_key-and-gfe_preset_encryption_key-must-be-defined)
   - [Should I reuse `GFE_PRESET_WEBSITE_KEY` and `GFE_PRESET_ENCRYPTION_KEY`?](#should-i-reuse-gfe_preset_website_key-and-gfe_preset_encryption_key)
@@ -86,7 +86,7 @@ Config::define('GFE_PRESET_ENCRYPTION_KEY', 'bbb'); // Also kown as **encryption
 Config::define('GFE_PRESET_LICENSE_KEY', 'zzz');
 ```
 
-## Wanrings
+## Warnings
 
 - You must save [Gravity Forms Encrypted Fields](https://codecanyon.net/item/gravity-forms-encrypted-fields/18564931) setting page whenever:
   - installing/activating the plugins
