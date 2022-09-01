@@ -30,14 +30,17 @@
         "php": "^7.4 || ^8.0"
     },
     "require-dev": {
-        "itinerisltd/itineris-wp-coding-standards": "^0.2.0",
+        "itinerisltd/itineris-wp-coding-standards": "^0.4.1",
         "roave/security-advisories": "dev-master"
     },
     "config": {
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "extra": {
         "branch-alias": {
