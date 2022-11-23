@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:     GFE Preset
  * Plugin URI:      https://github.com/ItinerisLtd/gfe-preset
