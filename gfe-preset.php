@@ -4,7 +4,7 @@
  * Plugin Name:     GFE Preset
  * Plugin URI:      https://github.com/ItinerisLtd/gfe-preset
  * Description:     Utilities for Gravity Forms Encrypted Fields
- * Version:         0.1.1
+ * Version:         0.2.0
  * Author:          Itineris Limited
  * Author URI:      https://itineris.co.uk
  * License:         MIT
